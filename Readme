@@ -1,0 +1,12 @@
+######################
+#This is what I needed to do to install the requirements of FaceRecognition: pdlib and bzip2 for PHP in NextCloud
+
+#Install Bz2 for PHP and FaceRecognition
+sudo apt install php7.4-{bcmath,xml,fpm,mysql,zip,intl,ldap,gd,cli,bz2,curl,mbstring,pgsql,opcache,soap,cgi}
+#Install pdlib for PHP and FaceRecognition
+echo "deb https://repo.delellis.com.ar focal focal" > /etc/apt/sources.list.d/20-pdlib.list
+wget -qO - https://repo.delellis.com.ar/repo.gpg.key | sudo apt-key add -
+sudo apt update
+sudo apt install php7.4-pdlib
+sudo systemctl restart apache2
+
